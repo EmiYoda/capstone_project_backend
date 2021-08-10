@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "tsc -w",
     "dev": "nodemon dist/app.js",
-    "start": "ts-node src/app.ts"
+    "start": "node dist/app.js"
   },
   "keywords": [],
   "author": "3mi <emilianodelvalle@icloud.com> (https://www.npmjs.com/~3mi)",
@@ -40,7 +40,8 @@
     "slugify": "^1.6.0",
     "typescript": "^4.3.5",
     "validator": "^13.6.0",
-    "ts-node": "^10.1.0"
+    "ts-node": "^10.1.0",
+    "nodemon": "^2.0.12"
   },
   "devDependencies": {
     "@types/argon2": "^0.15.0",
@@ -50,7 +51,6 @@
     "@types/hapi__joi": "^17.1.7",
     "@types/jsonwebtoken": "^8.5.4",
     "@types/mongoose": "^5.11.97",
-    "@types/validator": "^13.6.3",
-    "nodemon": "^2.0.12"
+    "@types/validator": "^13.6.3"
   }
 }
