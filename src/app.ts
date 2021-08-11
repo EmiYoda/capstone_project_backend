@@ -3,7 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import authRoutes from "./routes/auth";
 import welcome from "./routes/welcome";
-import { MONGO } from "./config/config";
+import { MONGO } from "./config/Config";
 import cookieParser from "cookie-parser";
 import postRoutes from "./routes/post";
 

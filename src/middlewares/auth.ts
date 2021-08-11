@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { SECRET } from "../config/config";
+import { SECRET } from "../config/Config";
 
 const verifyToken = (req: any, res: any, next: any) => {
     const token =
