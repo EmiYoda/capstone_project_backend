@@ -10,13 +10,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const origins = [
-    // "https://photodb-backend-capstone.herokuapp.com/",
-    "https://capstone-project-frontend.vercel.app/",
-];
 app.use(
     cors({
-        origin: origins,
+        origin: "https://capstone-project-frontend.vercel.app/",
     })
 );
 app.use(express.json({ limit: "30mb" }));
