@@ -26,7 +26,7 @@ export const register = async (req: any, res: any) => {
 
         const token = jwt.sign(
             { user_id: user._id, email, name },
-            `${process.env.SECRET}`,
+            "c4b7a440-65a2-4ac4-a835-64131ac5f095",
             {
                 expiresIn: "2h",
             }
@@ -52,7 +52,7 @@ export const login = async (req: any, res: any) => {
         if (user && (await bcrypt.compare(password, user.password))) {
             const token = jwt.sign(
                 { user_id: user._id, email, name },
-                `${process.env.SECRET}`,
+                "c4b7a440-65a2-4ac4-a835-64131ac5f095",
                 {
                     expiresIn: "2h",
                 }
