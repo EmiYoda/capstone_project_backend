@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken";
-import { SECRET } from "../config/Config";
 
 const verifyToken = (req: any, res: any, next: any) => {
     const token =
@@ -9,7 +8,7 @@ const verifyToken = (req: any, res: any, next: any) => {
         return res.status(403).send("A token is required for authentication");
     }
     try {
-        const decoded = jwt.verify(token, SECRET);
+        const decoded = jwt.verify(token, `${process.env.SECRET}`);
         req.user = decoded;
     } catch (err) {
         return res.status(401).send("Invalid Token");

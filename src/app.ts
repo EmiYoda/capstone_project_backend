@@ -3,9 +3,11 @@ import cors from "cors";
 import mongoose from "mongoose";
 import authRoutes from "./routes/auth";
 import welcome from "./routes/welcome";
-import { MONGO } from "./config/Config";
 import cookieParser from "cookie-parser";
 import postRoutes from "./routes/post";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const origins = [
@@ -24,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 mongoose.connect(
-    `${MONGO}`,
+    `${process.env.MONGO}`,
     { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true },
     () => console.log("MongoDB Sucesfully connected")
 );
