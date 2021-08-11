@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 mongoose.connect(
-    `${process.env.MONGO}`,
+    "mongodb+srv://admin:3mi11MKJK@cluster0.4jqk5.mongodb.net/database?retryWrites=true&w=majority",
     { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true },
     () => console.log("MongoDB Sucesfully connected")
 );
