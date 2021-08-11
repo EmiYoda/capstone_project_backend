@@ -1,7 +1,7 @@
 import User from "../models/User";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { SECRET } from "../config";
+import { SECRET } from "../config/config";
 
 export const register = async (req: any, res: any) => {
     try {
