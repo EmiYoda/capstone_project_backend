@@ -8,10 +8,14 @@ import cookieParser from "cookie-parser";
 import postRoutes from "./routes/post";
 
 const app = express();
-
+const origins = [
+    "http://localhost:3000",
+    "http:192.168.0.16:3000",
+    "https://capstone-project-backend-photodb.vercel.app/",
+];
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: origins,
     })
 );
 app.use(express.json({ limit: "30mb" }));
