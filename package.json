@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "tsc -w",
     "dev": "nodemon dist/app.js",
-    "start": "node dist/app.js"
+    "start": "ts-node src/app.ts"
   },
   "keywords": [],
   "author": "3mi <emilianodelvalle@icloud.com> (https://www.npmjs.com/~3mi)",
