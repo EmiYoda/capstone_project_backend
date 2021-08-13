@@ -40,17 +40,6 @@ mongoose.connect(
     { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true },
     () => console.log("MongoDB Sucesfully connected")
 );
-app.get("/cookie", (_req, res) => {
-    const options = {
-        secure: true,
-        httpOnly: true,
-        domain: "http://localhost:3000",
-    };
-    return res
-        .cookie("cookieName", "cookieValue", options)
-        .status(200)
-        .send("cookie sent");
-});
 
 app.use("/api", authRoutes);
 app.use("/api", welcome);

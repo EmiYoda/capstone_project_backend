@@ -3,6 +3,11 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 export const register = async (req: any, res: any) => {
+    const options = {
+        secure: true,
+        httpOnly: true,
+        domain: "http://localhost:3000",
+    };
     try {
         const { name, email, password } = req.body;
 
@@ -33,7 +38,8 @@ export const register = async (req: any, res: any) => {
         );
         user.token = token;
 
-        res.status(201).json(user);
+        return res.cookie("token", token, options).status(201);
+        //.json(user);
     } catch (err) {
         console.log(err);
     }
