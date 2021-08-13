@@ -17,6 +17,7 @@ const app = express();
 app.use(
     cors({
         origin: origins,
+        credentials: true,
     })
 );
 app.use(
@@ -43,7 +44,6 @@ app.get("/cookie", (_req, res) => {
     const options = {
         secure: true,
         httpOnly: true,
-        withCredetials: true,
         domain: "http://localhost:3000",
     };
     return res
