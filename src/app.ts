@@ -25,8 +25,8 @@ app.use(
         saveUninitialized: true,
         resave: true,
         cookie: {
-            httpOnly: false,
-            secure: false,
+            httpOnly: true,
+            secure: true,
         },
     })
 );
