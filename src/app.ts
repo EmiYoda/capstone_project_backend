@@ -8,11 +8,14 @@ import postRoutes from "./routes/post";
 import dotenv from "dotenv";
 
 dotenv.config();
-
+const origins = [
+    "http://localhost:3000",
+    "https://capstone-project-frontend.vercel.app",
+];
 const app = express();
 app.use(
     cors({
-        origin: "https://capstone-project-frontend.vercel.app",
+        origin: origins,
     })
 );
 app.use(express.json({ limit: "30mb" }));
