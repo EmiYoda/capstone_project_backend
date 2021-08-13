@@ -4,11 +4,6 @@ import jwt from "jsonwebtoken";
 
 export const register = async (req: any, res: any) => {
     try {
-        const options = {
-            secure: true,
-            httpOnly: true,
-            domain: "http://localhost:3000",
-        };
         const { name, email, password } = req.body;
 
         if (!(email && password && name)) {
@@ -38,8 +33,7 @@ export const register = async (req: any, res: any) => {
         );
         user.token = token;
 
-        return res.cookie("token", token, options).status(201);
-        //.json(user);
+        res.status(201).json(user);
     } catch (err) {
         console.log(err);
     }
