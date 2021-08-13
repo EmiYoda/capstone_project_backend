@@ -41,8 +41,8 @@ mongoose.connect(
 );
 app.get("/cookie", (_req, res) => {
     const options = {
-        secure: false,
-        httpOnly: false,
+        secure: true,
+        httpOnly: true,
         withCredetials: true,
         domain: "http://localhost:3000",
     };
