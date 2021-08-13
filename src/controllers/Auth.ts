@@ -3,12 +3,12 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 export const register = async (req: any, res: any) => {
-    const options = {
-        secure: true,
-        httpOnly: true,
-        domain: "http://localhost:3000",
-    };
     try {
+        const options = {
+            secure: true,
+            httpOnly: true,
+            domain: "http://localhost:3000",
+        };
         const { name, email, password } = req.body;
 
         if (!(email && password && name)) {
