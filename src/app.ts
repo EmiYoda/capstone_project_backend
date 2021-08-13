@@ -3,7 +3,6 @@ import cors from "cors";
 import mongoose from "mongoose";
 import authRoutes from "./routes/auth";
 import welcome from "./routes/welcome";
-import session from "express-session";
 import cookieParser from "cookie-parser";
 import postRoutes from "./routes/post";
 import dotenv from "dotenv";
@@ -18,17 +17,6 @@ app.use(
     cors({
         origin: origins,
         credentials: true,
-    })
-);
-app.use(
-    session({
-        secret: "s3tctfeyfeufnwek",
-        saveUninitialized: true,
-        resave: true,
-        cookie: {
-            httpOnly: true,
-            secure: true,
-        },
     })
 );
 app.use(express.json({ limit: "30mb" }));
