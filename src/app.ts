@@ -43,6 +43,7 @@ app.get("/cookie", (_req, res) => {
     const options = {
         secure: false,
         httpOnly: false,
+        domain: "http://localhost:3000",
     };
     return res
         .cookie("cookieName", "cookieValue", options)
