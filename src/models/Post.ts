@@ -39,7 +39,7 @@ postSchema.pre("validate", function (next) {
     const post = this as any;
 
     if (post.title) {
-        post.slug = slugify(post.title, { lower: true, strict: true });
+        post.slug = slugify(post.title, { lower: true });
     }
 
     next();
